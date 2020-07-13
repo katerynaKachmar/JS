@@ -453,8 +453,7 @@ let cars1 = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 // };
 // console.log(cities[i]);
 
-//звідки UNDEFINED ?????????????????????????????????????????????????????????????????????????????????????????????
-// бо на останній ітерації i++ не знаходить
+
 
 // console.log('_________');
 
@@ -466,7 +465,9 @@ let cars1 = [car1, car2, car3, car4, car5, car6, car7, car8, car9, car10];
 // console.log(res);
 
 
-// Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills
+// Создать массив пользователей.
+// У каждого пользователя обязательно должено быть поле skills которое является массивом.
+// Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills
 
 let user1 = {
     name: 'ivan',
@@ -511,27 +512,23 @@ let user3 = {
 // }
 //
 // console.log(skills);
-// СПРОБУВАТИ ПЕРЕРОБИТИ МАСИВИ В ТАКИЙ ЯК ВНИЗУ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 
 // - За допомогою 2х циклів циклів проітеррувати  даний масив і масив кожного об'єкта.
-let users1 = [{name: 'vasya', age: 31, status: false, skills: ['java', 'js']}, {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']}, {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']}, {name: 'olya', age: 28, status: false, skills: ['java', 'js']}, {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}];
+// let users1 = [{name: 'vasya', age: 31, status: false, skills: ['java', 'js']}, {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']}, {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']}, {name: 'olya', age: 28, status: false, skills: ['java', 'js']}, {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}];
 
-// for (let user of users1) {
-//     console.log(Object.keys(user) + Object.values(user))
-//     for (let arr of user.skills) {
-//         console.log(arr);
+
+// let usersSkills = []
+// for (let i = 0; i < users1.length; i++) {
+//     const user = users1[i]
+//     for (let j = 0; j < user.skills.length; j++) {
+//         const skill = user.skills[j];
+//         usersSkills.push(skill)
+//
 //     }
-// }
-// for (let user of users1) {
-//     console.log(Object.values(user.skills))
 //
 // }
-// for (let user of users) {
-//     console.log(Object.keys(user) + Object.values(user))          //^^))
-//     for (let arr of user.skills) {
-//         console.log(arr);
-//     }
-// }
+// console.log(usersSkills);
 /////////////////////////////////////////////////////////////////////////////////////
 
 let users = [{
@@ -592,16 +589,16 @@ let users = [{
 }];
 
 
-
+console.log('________________________________');
 
 // - З масиву users за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив.
-let adress = []
-for (let user of users) {
-    console.log(`user name ${user.name} and only adress ${Object.values(user.address)}`);
-    adress.push(Object.values(user.address));
-
-}
-console.log(adress);
+// let adress = [];
+// for (let user of users) {
+//     console.log(`user name ${user.name} and only adress ${Object.values(user.address)}`);
+//     adress.push(Object.values(user.address));
+//
+// }
+// console.log(adress);
 //  СПРОБУВАТИ ЗРОБИТИ СУЦІЛЬНИЙ МАСИВ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
@@ -609,17 +606,154 @@ console.log(adress);
 // - За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
 // 01.11.00
 
-    for (let user of users) {
-        let studentsDiv = document.createElement('div');
-        for (let a in user) {
-            let innerDiv = document.createElement('div');
-            innerDiv.innerHTML = `${user[a]}`
-            studentsDiv.appendChild(innerDiv)
-        }
-        // studentsDiv.innerHTML = `${user.name}, ${user.age}, ${user.status}`
-        document.body.appendChild(studentsDiv)
-    }
+    // for (let user of users) {
+    //     let studentsDiv = document.createElement('div');
+    //     let innerDiv = document.createElement('div');
+    //     for (let a in user) {
+    //         let innerDiv = document.createElement('div');
+    //         for (let b in [a].address) {
+    //             let innerDiv2 = document.createElement('div');
+    //             innerDiv2.innerHTML = `${user[a].address.city}`
+    //             innerDiv.appendChild(innerDiv2)
+    //         }
+    //         innerDiv.innerHTML = `${user[a]}`
+    //         studentsDiv.appendChild(innerDiv)
 
+    //     studentsDiv.innerHTML = `${user.name}, ${user.age}, ${user.status}`
+    //     document.body.appendChild(studentsDiv)
+    // }
+
+console.log('__________________NEW_____________________');
+
+//
+// for (const user of users) {
+//     let div = document.createElement('div');
+//     let div1 = document.createElement('div');
+//     let div3 = document.createElement('div');
+//     let div4 = document.createElement('div');
+//     let div5 = document.createElement('div');sdfgl;
+//     div.innerHTML = `${user.name} ${user.age} ${user.status}`;
+//     div1.innerHTML = `${user.address.city}    `;
+//     div3.innerHTML = `${user.address.country}`
+//     div4.innerHTML = `${user.address.street}`
+//     div5.innerHTML = `${user.address.houseNumber}`
+//
+//
+//
+//
+//
+//     document.body.appendChild(div);
+//     div.appendChild(div1);
+//     div.appendChild(div5);
+//     div.appendChild(div3);
+//     div.appendChild(div4);
+//
+// }
+ // створити до кожного обєкту дівки окремо!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+//?????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+
+// - Дано 2 масиви з рівною кількістю об'єктів.
+// Масиви:
+
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
+//     Записати цей об'єкт в новий масив
+// Частковий приклад реультату:
+//     let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]
+
+//     let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
+// let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
+// //
+
+//
+// for (let user of usersWithId) {
+//     for (let city of citiesWithId) {
+//         if (user.id ===  city.user_id) {
+//             user.adress = city;
+//         }
+//     }
+// };
+// console.log(usersWithId);
+
+
+// - створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
+// let div = document.createElement('div');
+// div.classList.add('className');
+// div.id = 'id';
+// div.innerHTML = 'some text';
+// document.body.appendChild(div);
+//
+//
+// let className = document.getElementsByClassName('className');
+// for (let cl of className) {
+//     console.log(cl.innerText);
+//
+// };
+// let id = document.getElementById('id');
+// console.log(id.innerText);
+//
+// let tag = document.getElementsByTagName('div');
+//
+// for (let t of tag) {
+//     console.log(t.innerText);
+// };
+
+// - змінити цей текст використовуючи селектори id, class,  tag
+// - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+// id.innerText = 'new text';
+// id.style.width = '200px';
+// id.style.height = '400px';
+// for (let t of tag) {
+//     t.innerHTML = 'new new text';
+//     t.style.width = '100px';
+//     t.style.height = '100px';
+// };
+//
+// for (let cl of className) {
+//     cl.innerHTML = 'new text'
+//     cl.style.width = '30px';
+//     cl.style.height = '50px'
+//
+// };
+
+// - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
+
+function create (type, content, append, ap) {
+    let element = document.createElement(type);
+    element.innerHTML = content;
+    append.appendChild(element)
+
+};
+create('table', '', document.body);
+
+
+
+
+let table = document.createElement('table');
+let tr = document.createElement('tr');
+let td = document.createElement('td');
+let td1 = document.createElement('td');
+let td2 = document.createElement('td');
+
+
+let textTd = document.getElementsByTagName('td');
+for (let td of textTd) {
+    td.innerHTML = 'hello'
+}
+
+document.body.appendChild(table);
+table.appendChild(tr);
+tr.appendChild(td);
+tr.appendChild(td1);
+tr.appendChild(td2);
+
+
+
+
+let element = document.createElement('div');
+element.innerHTML = 'hello';
+
+document.body.appendChild(element)
 
 
 

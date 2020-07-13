@@ -42,8 +42,10 @@ for (let b of a) {
 // -- отримує всі елементи 'a' та додає їм клас element_XXX. Де XXX - текстовий контент елементу a
 
 for (let b of a) {
-    b.classList.add('element_XXX')
-    b.textContent = 'XXX'
+
+    let classText = b.innerHTML;
+    b.classList.add(`element_${classText}`);
+
 }
 // -- отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()
 
@@ -62,7 +64,7 @@ for (let sub of subHeader) {
 
 let content1 = document.getElementsByClassName('content_1');
 for (let cont of content1) {
-    cont.textContent = prompt('enter your text')
+    cont.innerHTML = prompt('enter your text')
 }
 // -- отримати елементи p та змінити їм paddin на довільне значення
 
@@ -74,5 +76,5 @@ for (let i of p) {
 
 let text2 = document.getElementsByClassName('text2');
 for (let t of text2) {
-    t.textContent = 'some new text'
+    t.innerHTML = 'some new text'
 }
